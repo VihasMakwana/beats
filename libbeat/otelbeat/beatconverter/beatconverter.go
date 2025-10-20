@@ -184,6 +184,8 @@ func (c Converter) Convert(_ context.Context, conf *confmap.Conf) error {
 
 			}
 		}
+		// TODO: Make this configurable
+		out["service::telemetry::metrics::level"] = "none"
 
 		err = conf.Merge(confmap.NewFromStringMap(out))
 		if err != nil {
